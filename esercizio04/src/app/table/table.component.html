@@ -1,0 +1,29 @@
+<h2>What <span>todo</span>?</h2>
+<section>
+<div class="container">
+    <div class="colonna">
+        <h3 class="stitoli">UserId</h3>
+        <div class="tabella" *ngFor ="let p of elencoPromemoria">
+            <p>{{p.userId}}</p>
+        </div>
+    </div>
+    <div class="colonna">
+        <h3 class="stitoli">Id</h3>
+        <div class="tabella" *ngFor ="let p of elencoPromemoria">
+            <p>{{p.id}}</p>
+        </div>
+    </div>
+    <div class="colonna">
+        <h3 class="stitoli">Titolo</h3>
+        <div class="tabella" *ngFor ="let p of elencoPromemoria">
+            <p>{{p.title}}</p>
+        </div>
+   </div>
+   <div class="colonna">
+        <h3 class="stitoli">Stato</h3>
+        <div class="tabella" *ngFor ="let p of elencoPromemoria" [ngStyle]="{'background-color': p.completed? 'green' : 'red'}" >
+            <p class="stato"></p>
+        </div>
+  </div>
+</div>
+</section>

@@ -1,0 +1,50 @@
+.container{
+    width: 100%;
+    border: 3px solid black;
+    border-radius: 4px;
+    height: 90%;
+    display: flex;
+    margin: 5%;
+    
+}
+
+.rosso{
+    border: 2px solid red
+}
+
+.verde{
+    border: 2px solid green;
+}
+
+section{
+    display: grid;
+    place-content: center;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+span{
+    color: #3206f7;
+    text-shadow: 0 0 5px #388cdb, 0 0 10px #388cdb,
+             0 0 20px #388cdb, 0 0 30px #ee6f58,
+             0 0 40px #ee6f58;
+}
+
+.colonna{
+    float: left;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.stitoli{
+    text-align: center;
+}
+.tabella{
+    text-align: center;
+}
+
+.stato{
+    width: 1rem;
+    height: 1rem;
+    padding: 2%;
+}
