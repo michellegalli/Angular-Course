@@ -1,0 +1,28 @@
+section{
+    
+    display: grid;
+    place-content: center;
+      
+}
+.add{
+    
+    display: grid;
+    place-content: center;
+}
+div{
+    background-color: rgb(255, 255, 240);
+}
+.info{
+    text-align: center;
+}
+th{
+    
+    border: 2px solid green;
+}
+td{
+    
+    border: 2px solid green;
+}
+span{
+    font-weight: bold;
+}
