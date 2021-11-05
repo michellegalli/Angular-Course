@@ -1,0 +1,11 @@
+.container{
+    border: 2px solid green;
+}
+
+.row{
+        border: 2px solid rgb(211, 9, 9);
+}
+
+.col{
+    border: 2px solid rgb(243, 239, 29);
+}

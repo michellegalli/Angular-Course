@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Liste</h2>
+
+    <h3>Lista semplice</h3>
+    <ul class="list-group">
+        <li class="list-group-item">Mele</li>
+        <li class="list-group-item">Pere</li>
+        <li class="list-group-item">Banane</li>
+    </ul>
+
+    <h3>Lista semplice con mouse over</h3>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item-action">Mele</li>
+        <li class="list-group-item list-group-item-action">Pere</li>
+        <li class="list-group-item list-group-item-action">Banane</li>
+    </ul>
+
+    <h3>Lista di pulsanti</h3>
+    <div class="list-group">
+        <button class="list-group-item list-group-item-action">Fiat</button>
+        <button class="list-group-item list-group-item-action">Renault</button>
+        <button class="list-group-item list-group-item-action">Miao</button>
+    </div>
+
+    <h3>Lista di link</h3>
+    <nav class="list-group">
+        <a href="" class="list-group-item">Milano</a>
+        <a href="" class="list-group-item">Roma</a>
+        <a href="" class="list-group-item">Napoli</a>
+    </nav>
+
+    <h3>Lista dinamica</h3>
+    <input type="text" (input)="scegli($event)">Scegli giorno
+<ul class="list-group">
+   
+    <li class="list-group-item" *ngFor="let v of voci" [class.active]="v==scelta">{{v}}</li>
+</ul>
+</div>
