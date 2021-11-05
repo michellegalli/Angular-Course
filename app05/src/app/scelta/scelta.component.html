@@ -1,0 +1,26 @@
+<h2>Direttive di scelta</h2>
+<h3>NgIf</h3>
+<p>Qui sotto c'è un paragrafo visibile se è ugulae a true</p>
+<p *ngIf="visibile">Paragrafo visibile</p>
+
+<p>Qui sotto c'è un paragrafo che non si vede se nascosto è ugule a true</p>
+<p *ngIf="!nascosto">Nascosto</p>
+
+<p>Qui sotto mostro un avviso se il numero è maggiore di 5</p>
+<p *ngIf="numero > 5"> Numero {{numero}} maggiore di 5</p>
+
+
+<div *ngIf="persona">
+    <p>Dati della persona</p>
+    <p>Nome: {{persona.nome}} </p>
+    <p>Cognome: {{persona.cognome}} </p>
+    <p>Anni: {{persona.anni}} </p>
+</div>
+
+<h3>NgSwitch</h3>
+<p [ngSwitch]="colore">
+ <span *ngSwitchCase="'blu'"> Il colore del mare</span>
+ <span *ngSwitchCase="'giallo'"> Il colore del sole</span>
+ <span *ngSwitchCase="'nero'"> Il colore della notte</span>
+ <span *ngSwitchDefault>Un colore qualsiasi</span>
+</p>

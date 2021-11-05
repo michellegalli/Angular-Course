@@ -1,0 +1,13 @@
+<h2>Direttiva di iterazione</h2>
+<p>Elenco dei colori</p>
+<ul>
+    <li *ngFor="let c of colori">Questo è il colore {{c}}</li>
+</ul>
+<p>Elenco dei colori usando indice posizione</p>
+<ul>
+    <li *ngFor="let c of colori; let i=index">Questo è il colore {{c}} in posizione {{i}}</li>
+</ul>
+<p>Elenco di ogetti di tipo persona</p>
+<ol>
+    <li *ngFor ="let p of persone">{{p.nome}} {{p.cognome}}</li>
+ </ol>
