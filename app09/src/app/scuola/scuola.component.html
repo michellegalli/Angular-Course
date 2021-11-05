@@ -1,0 +1,23 @@
+<h2>Scuola</h2>
+<h3>Elenco studenti</h3>
+<p>Ordina per
+    <button (click)="sortStudentiByMedia()">media {{orderMediaAsc ? '&darr;' : '&uarr;'}}</button>
+    <button (click)="sortStudentiById()">matricola {{orderIdAsc ?  '&darr;': '&uarr;'}}</button>
+    <button (click)="sortStudentiByCognome()">Cognome {{orderCognomeAsc ?  '&darr;': '&uarr;'}}</button>
+    
+</p>
+
+<table>
+    <tr>
+        <th> matricola</th>
+        <th> cognome</th>
+        <th> nome</th>
+        <th> media</th>
+    </tr>
+    <tr *ngFor="let s of studenti">
+        <td> {{s.matricola}}</td>
+        <td> {{s.cognome}}</td>
+        <td> {{s.nome}}</td>
+        <td> {{s.media}}</td>
+    </tr>
+</table>
