@@ -1,0 +1,19 @@
+img{
+    width: 30%;
+    float: left;
+}
+article{
+    display: inline-block;
+    margin: 0 2rem;
+    
+}
+
+h3{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+

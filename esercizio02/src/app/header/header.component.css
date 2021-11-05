@@ -1,0 +1,13 @@
+header{
+    height: 10%;
+    padding-top: 3%;
+    padding-left: 2%;
+    border: 2px solid black;
+}
+
+h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
