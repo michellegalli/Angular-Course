@@ -1,0 +1,15 @@
+<div class="container">
+    <h2>Dipendente:</h2>
+    <img src="./assets/img/23.jpg" alt="">
+    <p class="info">Nome: {{dipendente.nome}}</p>
+    <p class="info">Cognome: {{dipendente.cognome}}</p>
+    <p class="info">Data di assunzione: {{dipendente.assunzione}}</p>
+    <p class="info">Indirizzo: {{dipendente.indirizzo}}</p>
+    <p class="info">Cap: {{dipendente.cap}}</p>
+    <p class="info">Città: {{dipendente.citta}}</p>
+    <button (click)="onActive()">{{nascosto ? 'Mostra le info' : 'Nascondi le Info'}}</button>
+<div [hidden]="nascosto"> 
+<p class="info">Telefono: {{dipendente.telefono}}</p>
+<p class="info">Email:{{dipendente.email}} </p>
+</div>
+</div>
