@@ -1,0 +1,12 @@
+<h2>Modifica paziente</h2>
+<p>Compila i campi per aggiornare i dati del paziente{{paziente.codice}}</p>
+<p>
+    <input type="text" #codice [value]="paziente.codice">Codice <br>
+    <input type="text" #nome [value]="paziente.nome">Nome <br>
+    <input type="text" #cognome [value]="paziente.cognome">Cognome <br>
+    <input type="text" #stanza [value]="paziente.stanza">Stanza <br>
+    <button (click)="conferma( nome, cognome, stanza)">Conferma</button>
+    <button routerLink="/pazienti">Annulla</button>
+    <button (click)="elimina()"> Elimina </button>
+    
+</p>

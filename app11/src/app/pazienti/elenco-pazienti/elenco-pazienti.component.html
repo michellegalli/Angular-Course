@@ -1,0 +1,24 @@
+
+<section>
+<h3>Elenco Pazienti</h3>
+<table>
+    <tr>
+        <th>Codice</th>
+        <th>Cognome</th>
+        <th>Nome</th>
+        <th>Stanza</th>
+        <th *ngIf="modify">Modifiche</th>
+    </tr>
+    <tr *ngFor="let p of elencoPazienti">
+        <td>{{p.codice}}</td>
+            <td>{{p.nome}}</td>
+            <td>{{p.cognome}}</td>
+            <td>{{p.stanza}}</td>
+          <td *ngIf="modify"><button routerLink="modifica/{{p.codice}}" (click)="mostra()">Modifica</button></td>
+    </tr>
+</table>
+<button *ngIf="modify"routerLink="nuovo"(click)="mostra()">Nuovo</button>
+<div *ngIf="modifica">
+<router-outlet></router-outlet></div>
+</section>
+
