@@ -1,0 +1,123 @@
+<div class="row">
+  <div class="col">
+    <h3>Form Utente</h3>
+    <form
+      #formUtente="ngForm"
+      (ngSubmit)="onSubmit(formUtente)"
+      [hidden]="submitOk"
+    >
+      <div
+        class="alert alert-danger"
+        *ngIf="formUtente.submitted && formUtente.invalid"
+      >
+        <h4>Controlla i dati inseriti</h4>
+        <p>
+          Ci sono errori nei campi da te modificati o non hai compilato i campi
+          obligatori
+        </p>
+      </div>
+      <label for="id" class="form-label">Id</label>
+      <input
+        type="number"
+        name="id"
+        id="id"
+        class="form-control mb-3"
+        required
+        [(ngModel)]="dati.id"
+        #id="ngModel"
+        [class.is-invalid]="
+          (id.invalid && id.touched) || (formUtente.submitted && id.invalid)
+        "
+      />
+      <div class="invalid-feedback">L'id è obbligatorio</div>
+
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          class="form-control mb-3"
+          required
+          [(ngModel)]="dati.nome"
+          #nome="ngModel"
+          [class.is-invalid]="
+            (nome.invalid && nome.touched) ||
+            (formUtente.submitted && nome.invalid)
+          "
+        />
+
+        <div class="invalid-feedback">il nome è obbligatorio</div>
+      </div>
+      <div class="mb-3">
+        <label for="cognome" class="form-label">Cognome</label>
+        <input
+          type="text"
+          name="cognome"
+          id="cognome"
+          autocomplete="off"
+          class="form-control mb-3"
+          [(ngModel)]="dati.cognome"
+          minlength="2"
+          #cognome="ngModel"
+          [class.is-invalid]="
+            (cognome.invalid && cognome.touched) ||
+            (formUtente.submitted && cognome.invalid)
+          "
+        />
+        <div class="invalid-feedback">
+          il cognome, se presente deve avere due lettere
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          autocomplete="off"
+          class="form-control mb-3"
+          [(ngModel)]="dati.username"
+          required
+          #username="ngModel"
+          [class.is-invalid]="
+            (username.invalid && username.touched) ||
+            (formUtente.submitted && username.invalid)
+          "
+        />
+        <div class="invalid-feedback">Il nome utente è obbligatorio</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          autocomplete="off"
+          class="form-control mb-3"
+          [(ngModel)]="dati.password"
+          required
+          #password="ngModel"
+          [class.is-invalid]="
+            (password.invalid && password.touched) ||
+            (formUtente.submitted && password.invalid)
+          "
+        />
+        <div class="invalid-feedback">La password è obbligatorio</div>
+      </div>
+
+      <input
+        type="submit"
+        value="Aggiungi"
+        class="btn btn-primary"
+        (click)="inserisci(id, nome, cognome, username, password)"
+        routerLink="utenti"
+      />
+      <input type="reset" value="Cancella" class="btn btn-warning" />
+    </form>
+    <div class="alert alert-success" *ngIf="submitOk">
+      <h3>dati inviati correttamente</h3>
+    </div>
+  </div>
+</div>

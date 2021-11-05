@@ -1,0 +1,30 @@
+
+
+<section>
+    <h3>Elenco Utenti</h3>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th >Modifiche</th>
+        </tr>
+        <tr *ngFor="let e of elencoUtenti">
+            <td>{{e.id}}</td>
+                <td>{{e.nome}}</td>
+                <td>{{e.cognome}}</td>
+                <td>{{e.username}}</td>
+                <td>{{e.password}}</td>
+                
+              <td ><button routerLink="modifica/{{e.id}}">Modifica</button></td>
+        </tr>
+    </table>
+    <button routerLink="nuovo">Nuovo</button>
+    <div>
+    <router-outlet></router-outlet>
+    </div>
+    </section>
+    
+    
