@@ -1,0 +1,21 @@
+<h2>String Interpolation</h2>
+<h3>Contenuto da un attributo ad un tag</h3>
+<p> {{nome || "Utente"}}</p>
+<p>Benvenuto {{nome}}</p>
+
+<h3>Contenuto restituito da calcoli:</h3>
+<p> prezzo: {{prezzo}}</p>
+<p>Numero pezzi: {{numeroPezzi}}</p>
+<p>Prezzo totale: {{prezzo* numeroPezzi}}</p>
+
+<h3>Chiamata dei metodi</h3>
+<p>Nominativo:{{nome +' '+ cognome.toUpperCase()}}</p>
+
+<h3>Date e orari:</h3>
+<p>Data di oggi: {{oggi}}</p>
+<p>Data di oggi: {{oggi.toLocaleDateString()}}</p>
+<p>Orario: {{oggi.toLocaleTimeString()}}</p>
+
+<h3>Percorsi:</h3>
+<p>Collegamento: {{link}}</p>
+<p>Clicca <a href="{{link}}">qui</a> per andare su google</p>
