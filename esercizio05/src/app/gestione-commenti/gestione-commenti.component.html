@@ -1,0 +1,10 @@
+<h2> Commenti:</h2>
+<div *ngIf="commentoSelezionato" class="stile">
+    <h4>Libro selezionato {{commentoSelezionato.id}}  <button (click)="chiudi()" >Chiudi</button> </h4> 
+    <ul>
+        <p>Name: {{commentoSelezionato.name}}</p>
+        <p>Email: {{ commentoSelezionato.email}}</p>
+        <p>Bady: {{ commentoSelezionato.body}}</p>
+    </ul>
+</div>
+<app-commento *ngFor ="let c of commenti" [datiCommento]="c" (selezionato)="recuperaSelezione($event)"></app-commento>
