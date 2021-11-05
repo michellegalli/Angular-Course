@@ -1,0 +1,16 @@
+<h3>Elenco Album: 
+    <button (click)="sortAlbumByUserId()">UserId {{orderUserIdAsc ?  '&darr;': '&uarr;'}}</button>
+    <button (click)="mostra()">Mosta</button>
+</h3>
+<table *ngIf="mostrare">
+<tr>
+    <th>User Id</th>
+    <th>Id</th>
+    <th>Titoli</th>
+</tr>
+<tr *ngFor="let a of albums">
+    <td>{{a.userId}}</td>
+    <td>{{a.id}}</td>
+    <td>{{a.title}}</td>
+</tr>
+</table>
