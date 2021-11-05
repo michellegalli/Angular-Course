@@ -1,0 +1,21 @@
+<h1>Direttive, riferimenti, pipes e content projection</h1>
+<h2>Direttive di attributo
+    <button (click)="mostraDirettiva()">Mostra</button>
+</h2>
+<app-direttive *ngIf="direttiva"></app-direttive>
+
+<h2> Content projection 
+    <button (click)="mostraContent()">Mostra</button>
+</h2>
+<app-content-projection *ngIf="content"></app-content-projection>
+
+<h2>Template variables
+    <button (click)="mostraVariables()">Mostra</button>
+
+</h2>
+<app-template-variables *ngIf="variables"></app-template-variables>
+
+<h2>Pipes
+    <button (click)="mostraPipes()">Mostra</button>
+</h2>
+<app-esempi-pipes *ngIf="pipes"></app-esempi-pipes>

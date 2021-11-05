@@ -1,0 +1,28 @@
+<h3>Numeri</h3>
+<p>numero: {{numero}}</p>
+<p>numero: {{numero | number:'.2-2'}}</p>
+
+<h3>Stringhe</h3>
+<p>nome: {{nome}}</p>
+<p>nome: {{nome | uppercase}}</p>
+<p>nome: {{nome | lowercase}}</p>
+<p>nome: {{nome | slice:0:1}}</p>
+<p>nome: {{nome | slice:1}}</p>
+<p>mese: {{mese}}</p>
+<p>mese: {{mese | slice:0:3}}</p>
+<p>mese: {{mese | slice:0:3 | uppercase}}</p>
+
+
+<h3> Date e orari</h3>
+<p>oggi: {{oggi}}</p>
+<p>oggi: {{oggi | date}}</p>
+<p>oggi: {{oggi | date : 'dd/MM/yy'}}</p>
+<p>oggi: {{oggi | date : 'dd MMM yy'}}</p>
+<p>oggi: {{oggi | date : 'dd MMMM yy'}}</p>
+<p>oggi: {{oggi | date : 'EE dd MMMM yy hh:mm'}}</p>
+<p>oggi: {{oggi | date : 'short'}}</p>
+
+<h3>Valute</h3>
+<p>prezzo: {{prezzo}}</p>
+<p>prezzo: {{prezzo | currency}}</p>
+<p>prezzo: {{prezzo | currency : 'EUR'}}</p>
