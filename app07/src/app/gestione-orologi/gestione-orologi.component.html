@@ -1,0 +1,8 @@
+<h2>Gestione Orologi</h2>
+<ul>
+    <li *ngFor="let o of elencoOrologi">
+       {{o.vediOrario()}} <button (click)="aumenta(o)">+</button>
+    </li>
+</ul>
+
+<h2>Gestione Orologi con componente di tipo orologio</h2>
