@@ -1,0 +1,10 @@
+<h3>Chiamata Metodi</h3>
+<div [innerHTML]="display"></div>
+<button (click)="onClick()">Clicca</button>
+
+<button (click)="onReset()">Resetta</button>
+
+<h3>Attivare / Disattivare</h3>
+<input type="text" [disabled]="disabilitato" name="username">
+<button (click)="onActive()"> {{disabilitato ? 'Attiva' : 'Disattiva'}}</button>
+

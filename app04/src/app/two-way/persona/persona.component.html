@@ -1,0 +1,14 @@
+<h3>Persona</h3>
+<p>Dati della persona</p>
+<ul>
+    <li>Nome: {{persona.nome}}</li>
+    <li>Cognome: {{persona.cognome}}</li>
+    <li>Anni: {{persona.anni}}</li>
+</ul>
+
+<p>Modifica i dati</p>
+<p>
+    <input type="text" [(ngModel)]="persona.nome">Nome <br>
+    <input type="text" [(ngModel)]="persona.cognome">Cognome <br>
+    <input type="text" [(ngModel)]="persona.anni">Anni <br>
+</p>
