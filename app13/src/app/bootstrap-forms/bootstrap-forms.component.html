@@ -1,0 +1,62 @@
+<h2>Bootstrap forms</h2>
+
+<form action="" class="w-50">
+  <label for="nome" class="form-label">Nome</label>
+  <input type="text" name="name" id="nome" class="form-control mb-3">
+  <label for="cognome" class="form-label">Cognome</label>
+  <input type="text" name="cognome" id="cognome" autocomplete="off"  class="form-control mb-3"> 
+  <label for="pass" class="form-label">Password</label>
+  <input type="password" name="password" id="pass" maxlength="8"  class="form-control mb-3">
+  <label for="anni" class="form-label">Anni</label>
+  <input type="number" name="anni" id="anni"  class="form-control mb-3"> 
+  <label for="codice" class="form-label">Codice</label><br >
+  <input type="text" name="cadice" id="codice" disabled value="65" class="form-control-plaintext mb-3">
+
+  <fieldset class="mb-3">
+    <legend>Laurea</legend>
+    <div class="form-check">
+    <input type="radio" name="laurea" id="laureaSi" value="si" class="form-check-input">
+    <label for="laureaSi" class="form-check-label">Si</label>
+    </div>
+    <div class="form-check">
+    <input type="radio" name="laurea" id="laureaNo" value="no" class="form-check-input" checked>
+    <label for="laureaNo" class="form-check-label">No</label>
+    </div>
+    <div class="form-check">
+    <input type="radio" name="laurea" id="laureaNo" value="quasi"class="form-check-input" >
+    <label for="laureaquasi" class="form-check-label">In attesa di proclamazione</label>
+    </div>
+  </fieldset>
+
+  <label for="telefono" class="form-label">Numero di telefono</label>
+  <input type="tel" name="telefono" id="telefono" pattern="+39-[0-9{3}-[0-9]{4,7}" placeholder="+39-000-0000"class="form-control mb-3">
+
+  <div class="input-group mb-3">
+  <label for="email" class="input-group-text mb-3">Nome</label><br >
+  <input type="email" name="email" id="email" placeholder="info@gmail.com" class="form-control">
+  <label for="cv" class="mb-3">Carica cv</label>
+  <input type="file" class="mb-3" name="cv" id="cv">
+  </div>
+  <fieldset class="mb-3">
+      <legend>Interessi</legend>
+      <div class="form-check form-check-inline">
+          <input type="checkbox" name="interessi" id="intviaggi" value="viaggi" class="form-check-label">
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" name="interessi" id="intmusica" value="musica" class="form-check-label">
+    </div>
+    <div class="form-check form-check-inline">
+        <input type="checkbox" name="interessi" id="intcibo" value="cibo" class="form-check-label">
+    </div>
+  </fieldset>
+
+  <label for="datacolloquio" class="form-label">Data Colloquio</label>
+  <input type="date" name="datacolloquio" id="datacolloquio" class="form-control mb-3">
+  <input type="submit" value="invia">
+
+  <label for="commenti" class="form-label">Lascia un commento</label>
+  <textarea name="commenti" id="commenti" cols="30" rows="10"  class="form-control"></textarea>
+
+  <input type="submit" value="invia" class="btn btn-primary" >
+  <input type="reset" value="cancella" class="btn btn-warning">
+</form>

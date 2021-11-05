@@ -1,0 +1,27 @@
+<h2>HTML5 forms</h2>
+
+<form action="">
+  <label for="nome">Nome</label><br />
+  <input type="text" name="name" id="nome" /><br />
+  <label for="cognome">Cognome</label><br />
+  <input type="text" name="cognome" id="cognome" autocomplete="off" /> <br />
+  <label for="pass">Password</label><br />
+  <input type="password" name="password" id="pass" maxlength="8" /><br />
+  <label for="anni">Anni</label><br />
+  <input type="number" name="anni" id="anni" /> <br />
+  <label for="codice">Codice</label><br />
+  <input type="text" name="cadice" id="codice" disabled /><br />
+
+  <fieldset>
+    <legend>Laurea</legend>
+    <input type="radio" name="laurea" id="laureaSi" value="si" />
+    <label for="laureaSi">Si</label>
+    
+    <input type="radio" name="laurea" id="laureaNo" value="no" />
+    <label for="laureaNo">No</label>
+  </fieldset>
+
+  <label for="datacolloquio">Data Colloquio</label><br>
+<input type="date" name="datacolloquio" id="datacolloquio"><br>
+  <input type="submit" value="invia" />
+</form>

@@ -1,0 +1,154 @@
+<h2>Template Driven Forms</h2>
+
+<div class="row">
+  <div class="col">
+    <h3>Form Utente</h3>
+    <form #formUtente="ngForm" (ngSubmit)="onSubmit(formUtente)" [hidden]="submitOk">
+      <div class="alert alert-danger" *ngIf="formUtente.submitted && formUtente.invalid">
+        <h4>Controlla i dati inseriti</h4>
+        <p>
+          Ci sono errori nei campi da te modificati o non hai compilato i campi
+          obligatori
+        </p>
+      </div>
+
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input
+          type="text"
+          name="name"
+          id="nome"
+          class="form-control mb-3"
+          required
+          [(ngModel)]="dati.nome"
+          #nome="ngModel"
+          [class.is-invalid]="
+            (nome.invalid && nome.touched) ||
+            (formUtente.submitted && nome.invalid)
+          "
+        />
+
+        <div class="invalid-feedback">il nome è obbligatorio</div>
+      </div>
+      <div class="mb-3">
+        <label for="cognome" class="form-label">Cognome</label>
+        <input
+          type="text"
+          name="cognome"
+          id="cognome"
+          autocomplete="off"
+          class="form-control mb-3"
+          [(ngModel)]="dati.cognome"
+          minlength="2"
+          #cognome="ngModel"
+          [class.is-invalid]="
+            (cognome.invalid && cognome.touched) ||
+            (formUtente.submitted && cognome.invalid)
+          "
+        />
+        <div class="invalid-feedback">
+          il cognome, se presente deve avere due lettere
+        </div>
+      </div>
+      <fieldset class="mb-3">
+        <legend>Laurea</legend>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="laurea"
+            id="laureaSi"
+            value="si"
+            class="form-check-input"
+            [(ngModel)]="dati.laurea"
+          />
+          <label for="laureaSi" class="form-check-label">Si</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="laurea"
+            id="laureaNo"
+            value="no"
+            class="form-check-input"
+            checked
+            [(ngModel)]="dati.laurea"
+          />
+          <label for="laureaNo" class="form-check-label">No</label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="laurea"
+            id="laureaNo"
+            value="quasi"
+            class="form-check-input"
+            [(ngModel)]="dati.laurea"
+          />
+          <label for="laureaquasi" class="form-check-label"
+            >In attesa di proclamazione</label
+          >
+        </div>
+      </fieldset>
+      <fieldset class="mb-3">
+        <legend>Interessi</legend>
+        <div class="form-check form-check-inline">
+          <input
+            type="checkbox"
+            name="intviaggi"
+            id="intviaggi"
+            value="viaggi"
+            class="form-check-label"
+            [(ngModel)]="dati.intviaggi"
+          />
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            type="checkbox"
+            name="intmusica"
+            id="intmusica"
+            value="musica"
+            class="form-check-label"
+            [(ngModel)]="dati.intmusica"
+          />
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            type="checkbox"
+            name="intcibo"
+            id="intcibo"
+            value="cibo"
+            class="form-check-label"
+            [(ngModel)]="dati.intcibo"
+          />
+        </div>
+      </fieldset>
+
+      <input type="submit" value="invia" class="btn btn-primary" />
+      <input type="reset" value="cancella" class="btn btn-warning" />
+    </form>
+
+
+
+    <div class="alert alert-success" *ngIf="submitOk">
+      <h3>Dati inviati con successo</h3>
+      <p>Grazie per esserti registrato</p>
+    </div>
+  </div>
+  <div class="col">
+    <h3>Dati del form</h3>
+    <pre>
+        {{ dati | json }}
+    </pre>
+    <h3>Dati del form model</h3>
+    <pre>
+        {{ datiModel | json }}
+    </pre>
+    <h3>Stato del form</h3>
+    <pre>
+        Form touched: {{ formUtente.touched }}
+        Form dirty: {{ formUtente.dirty }}
+        Form valid: {{ formUtente.valid }}
+        Form submitted: {{ formUtente.submitted }}
+    </pre>
+  </div>
+</div>

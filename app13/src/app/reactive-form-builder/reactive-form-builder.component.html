@@ -1,0 +1,151 @@
+<h2>Reactive forms builder</h2>
+
+<div class="row">
+  <div class="col">
+    <h3>Login form</h3>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="pass"
+          class="form-control mb-3"
+          formControlName="username"
+          [class.is-invalid]="
+            loginForm.controls.username.invalid &&
+            loginForm.controls.username.touched
+          "
+        />
+        <div class="invalid-feedback">
+          <p *ngIf="loginForm.controls.username.errors?.required">
+            La password è obbligatorio
+          </p>
+          <p *ngIf="loginForm.controls.username.errors?.admin">
+            Non puoi utilizzare l'utente admin
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="pass" class="form-label">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="pass"
+          class="form-control mb-3"
+          formControlName="password"
+          [class.is-invalid]="
+            loginForm.controls.password.invalid &&
+            loginForm.controls.password.touched
+          "
+        />
+        <div class="invalid-feedback">
+          <p *ngIf="loginForm.controls.password.errors?.required">
+            La password è obbligatorio
+          </p>
+          <p *ngIf="loginForm.controls.password.errors?.minlength">
+            La password deve contenere minimo 8 caratteri
+          </p>
+        </div>
+      </div>
+      <div class="form-check form-switch mb-3">
+        <input
+          formControlName="loginemail"
+          (change)="cambiaLogin()"
+          type="checkbox"
+          name="interessi"
+          id="loginemail"
+          class="form-check-input"
+        />
+        <label for="loginemail" class="form-check-label">login email</label>
+      </div>
+
+      <div class="input-group mb-3" *ngIf="loginForm.controls.loginemail.value">
+        <label for="email" class="input-group-text">E-mail</label>
+        <input
+          [class.is-invalid]="
+            loginForm.controls.email.invalid && loginForm.controls.email.touched
+          "
+          formControlName="email"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="info@mail.com"
+          class="form-control"
+        />
+        <div class="invalid-feedback">
+          <p *ngIf="loginForm.controls.email.errors?.required">
+            email è obbligatoria
+          </p>
+          <p *ngIf="loginForm.controls.email.errors?.email">
+            controlla la correttezza dell'indirizzo email
+          </p>
+        </div>
+      </div>
+      <div class="form-check form-switch mb-3">
+        <input
+          formControlName="datiPagamento"
+          (change)="cambiaLogin()"
+          type="checkbox"
+          id="datiPagamento"
+          class="form-check-input"
+        />
+        <label for="datiPagamento" class="form-check-label"
+          >Mostra i dati di pagamento</label
+        >
+      </div>
+
+      <div
+        class="mb-3"
+        *ngIf="loginForm.controls.datiPagamento.value"
+        formArrayName="carte"
+      >
+      <button type= "button" class="btn btn-secondary" (click)="nuovaCarta()">
+        Aggiungi un'altra carta
+      </button>
+      <div *ngFor="let carta of carte.controls; let i= index">
+        <fieldset [formGroupName]="i">
+          <legend>Dati della carta</legend>
+          <label [for]="'numero'+i">Numero di carta</label>
+          <input
+            type="text"
+            formControlName="numero"
+            [id]="'numero'+i"
+            class="form-control"
+            minlength="16"
+          />
+          <label [for]="'codice'+i">Codice sicurezza</label>
+          <input
+            type="number"
+            formControlName="codice"
+            [id]="'codice'+i"
+            class="form-control"
+            minlength="3"
+            maxlength="3"
+          />
+        </fieldset>
+      </div>
+      </div>
+
+      <input
+        type="submit"
+        value="accedi"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      />
+    </form>
+  </div>
+  <div class="col">
+    <h3>Dati</h3>
+    <pre>
+        {{ loginForm.value | json }}
+    </pre>
+    <h3>Stato del form</h3>
+    <ul>
+      <li>Form Touched: {{ loginForm.touched }}</li>
+      <li>Form Dirty: {{ loginForm.dirty }}</li>
+      <li>Form Valid: {{ loginForm.valid }}</li>
+    </ul>
+  </div>
+</div>
